@@ -85,8 +85,8 @@ func (g *GrpcClient) GetBlockByLimitNext(start, end int64) (*api.BlockListExtent
 	ctx, cancel := g.getContext()
 	defer cancel()
 
-	maxSizeOption := grpc.MaxCallRecvMsgSize(32 * 10e6)
-	return g.Client.GetBlockByLimitNext2(ctx, blockLimit, maxSizeOption)
+	//maxSizeOption := grpc.MaxCallRecvMsgSize(32 * 10e6)
+	return g.Client.GetBlockByLimitNext2(ctx, blockLimit)
 }
 
 // GetBlockByLatestNum return block list till num
